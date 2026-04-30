@@ -1,0 +1,66 @@
+{
+	"skipTerminateQuickPick": true,
+	"skipSwitchToOutput": false,
+	"skipErrorMessage": true,
+	"commands": [
+		{
+			"text": "🍊 Build HL",
+			"color": "orange",
+			"commandType":"palette",
+			"command": "workbench.action.tasks.runTask|HL release",
+			"alignment": "right",
+			"skipTerminateQuickPick": false,
+			"priority": -10
+		},
+		{
+			"text": "Run HL",
+			"color": "orange",
+			"command": "hl bin/client.hl",
+			"alignment": "right",
+			"skipTerminateQuickPick": false,
+			"priority": -11
+		},
+		{
+			"text": "☕ Build JS",
+			"color": "yellow",
+			"commandType":"palette",
+			"command": "workbench.action.tasks.runTask|JS release",
+			"alignment": "right",
+			"skipTerminateQuickPick": false,
+			"priority": -20
+		},
+		{
+			"text": "Run JS",
+			"color": "yellow",
+			"command": "start js.html",
+			"alignment": "right",
+			"skipTerminateQuickPick": false,
+			"priority": -21
+		},
+		{
+			"text": "🅰️ Build POT",
+			"color": "white",
+			"commandType":"palette",
+			"command": "workbench.action.tasks.runTask|Lang",
+			"alignment": "right",
+			"skipTerminateQuickPick": false,
+			"priority": -40
+		},
+		{
+			"text": "📦 Redist JS only",
+			"color": "lightgreen",
+			"command": "haxelib run redistHelper js.hxml -p sabotage",
+			"alignment": "right",
+			"skipTerminateQuickPick": false,
+			"priority": -49
+		},
+		{
+			"text": "📦 Redist",
+			"color": "lightgreen",
+			"command": "haxelib run redistHelper hl.hxml js.hxml -p Sabotage -zip",
+			"alignment": "right",
+			"skipTerminateQuickPick": false,
+			"priority": -50
+		}
+	]
+}
