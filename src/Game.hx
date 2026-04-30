@@ -99,8 +99,8 @@ class Game extends Process {
 		tf.textColor = c;
 		tf.x = Std.int( w()/Const.SCALE*0.5- tf.textWidth*0.5 );
 		tf.y = Std.int( h()/Const.SCALE*0.5- tf.textHeight*0.5 );
-		tw.createS(tf.alpha, 0>1, 0.1).end( function() {
-			tw.createS(tf.alpha, 500|0, 1).end( tf.remove );
+		tw.createS(tf.alpha, 1, 0.1).end( function() {
+			tw.createS(tf.alpha, 0, 1).end( tf.remove );
 		});
 	}
 
@@ -155,7 +155,7 @@ class Game extends Process {
 				root.add(mask, Const.DP_MASK);
 				mask.scaleX = M.ceil( w()/Const.SCALE );
 				mask.scaleY = M.ceil( h()/Const.SCALE );
-				tw.createS(mask.alpha, 0>1, 0.5).end( function() {
+				tw.createS(mask.alpha, 1, 0.5).end( function() {
 					mask.remove();
 					nextLevel();
 				} );
