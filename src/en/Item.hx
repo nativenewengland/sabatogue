@@ -33,7 +33,6 @@ class Item extends Entity {
 	}
 
 	public function getGrabDist() : Float {
-		return 1.5;
 		return switch item {
 			case Barrel: 0.5;
 			case _: 0.7;

@@ -302,7 +302,7 @@ class Hero extends Entity {
 			// Grab item/mob
 			if( ca.aPressed() && !cd.has("grabLock") && grabbedEnt==null ) {
 				var dh = new dn.DecisionHelper(Entity.ALL);
-				dh.keepOnly( function(e) return e.canBeGrabbed() && distCase(e)<=Const.GRAB_REACH && sightCheckEnt(e) );
+				dh.keepOnly( function(e) return e.canBeGrabbed() && distCase(e)<= (e.is(Item) ? e.as(Item).getGrabDist() : Const.GRAB_REACH) && sightCheckEnt(e) );
 				dh.score( function(e) return -distCase(e) );
 				dh.score( function(e) return e.is(Item) ? 1 : 0 );
 				var e = dh.getBest();
